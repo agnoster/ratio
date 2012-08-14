@@ -1,4 +1,4 @@
-# ratio - ℚ in JS
+# ratio - ℚ in JS [![build status](https://secure.travis-ci.org/agnoster/ratio.png?branch=master)](http://travis-ci.org/agnoster/ratio)
 
 Sometimes you want to handle a ratio as its own entity. Yeah, you could downcast to decimal (though on floating point that's really a crime), or encode it as a string, but neither of those really cuts it.
 
