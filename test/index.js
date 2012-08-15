@@ -30,6 +30,21 @@ describe("Ratio", function() {
         })
     })
 
+    describe("Edge cases", function() {
+
+        it("returns Infinity when n > 0 and d = 0", function() {
+            ratio(1,0).should.equal(Infinity)
+        })
+        it("returns -Infinity when n < 0 and d = 0", function() {
+            ratio(-1,0).should.equal(-Infinity)
+        })
+        it("returns NaN when n and d are both 0", function() {
+            var r = ratio(0, 0)
+            should.equal(typeof r, "number")
+            r.should.not.equal(r)
+        })
+    })
+
     describe("String parsing", function() {
 
         it("matches whole numbers", function() {
