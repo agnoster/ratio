@@ -96,6 +96,19 @@ describe("Ratio", function() {
 
     describe("Math", function() {
 
+        describe("Reciprocal", function() {
+
+            it("returns the reciprocal of the ratio", function() {
+                ratio(1/2).reciprocal().should.equal(2)
+                ratio(3/7).reciprocal().should.equal(ratio(7/3))
+                ratio(9/3).reciprocal().toString().should.equal("1/3")
+            })
+
+            it("returns Infinity for the reciprocal of 0", function() {
+                ratio(0).reciprocal().should.equal(Infinity)
+            })
+        })
+
         describe("Multiplication", function() {
 
             it("behaves reasonably with primitive multiplication", function() {

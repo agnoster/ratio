@@ -54,6 +54,9 @@ Ratio.prototype =
             this.d /= g
         }
     }
+, reciprocal: function() {
+        return Ratio(this.d, this.n)
+    }
 , times: function(x, d) {
         if (d) x = Ratio(x, d)
         else x = Ratio(x)
