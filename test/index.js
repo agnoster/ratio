@@ -78,4 +78,34 @@ describe("Ratio", function() {
             JSON.stringify(ratio(4,8)).should.equal('{"n":1,"d":2}')
         })
     })
+
+    describe("Math", function() {
+
+        describe("Multiplication", function() {
+
+            it("behaves reasonably with primitive multiplication", function() {
+                (ratio(1,2) * ratio(1,4)).should.equal(ratio(1,8))
+            })
+
+            it("can multiply by ratios", function() {
+                ratio(1,2).times(ratio(3,5)).toString().should.equal("3/10")
+            })
+
+            it("can multiply by (n,d) pair representing a ratio", function() {
+                ratio(1,2).times(3,5).toString().should.equal("3/10")
+            })
+
+            it("can multiply by integers", function() {
+                ratio(1,3).times(2).toString().should.equal("2/3")
+            })
+
+            it("can multiply by decimals", function() {
+                ratio(1,3).times(0.4).toString().should.equal("2/15")
+            })
+
+            it("automatically reduces the result of multiplication", function() {
+                ratio(2,3).times(3,4).toString().should.equal("1/2")
+            })
+        })
+    })
 })
