@@ -135,5 +135,32 @@ describe("Ratio", function() {
                 ratio(2,3).times(3,4).toString().should.equal("1/2")
             })
         })
+
+        describe("Division", function() {
+
+            it("behaves reasonably with primitive division", function() {
+                (ratio(1,2) / ratio(1,4)).should.equal(2)
+            })
+
+            it("can divide by ratios", function() {
+                ratio(1,2).div(ratio(3,5)).toString().should.equal("5/6")
+            })
+
+            it("can divide by (n,d) pair representing a ratio", function() {
+                ratio(1,2).div(3,5).toString().should.equal("5/6")
+            })
+
+            it("can divide by integers", function() {
+                ratio(1,3).div(2).toString().should.equal("1/6")
+            })
+
+            it("can divide by decimals", function() {
+                ratio(1,3).div(0.4).toString().should.equal("5/6")
+            })
+
+            it("automatically reduces the result of division", function() {
+                ratio(2,3).div(4,3).toString().should.equal("1/2")
+            })
+        })
     })
 })

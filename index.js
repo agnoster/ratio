@@ -63,6 +63,12 @@ Ratio.prototype =
 
         return Ratio(this.n * x.n, this.d * x.d)
     }
+, div: function(x, d) {
+        if (d) x = Ratio(x, d)
+        else x = Ratio(x)
+
+        return this.times(x.reciprocal())
+    }
 }
 
 module.exports = Ratio
