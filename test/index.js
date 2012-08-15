@@ -17,6 +17,17 @@ describe("Ratio", function() {
             ratio(0.5).toString().should.equal("1/2")
             ratio(0.02).toString().should.equal("1/50")
         })
+
+        it("can be instantiated from a ratio", function() {
+            ratio(ratio(1/2)).toString().should.equal("1/2")
+        })
+
+        it("is a different object when instantiated from another ratio", function() {
+            var a = ratio(1/2)
+              , b = ratio(a)
+            a.is_a = true
+            should.not.exist(b.is_a)
+        })
     })
 
     describe("String parsing", function() {

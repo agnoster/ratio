@@ -4,6 +4,8 @@ function Ratio(n, d) {
 
     if (!(this instanceof Ratio)) return new Ratio(n, d)
 
+    if (n instanceof Ratio) return new Ratio(n.n, n.d)
+
     if (!d) {
         if (d === 0) return NaN
         d = 1
