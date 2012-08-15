@@ -48,14 +48,16 @@ Ratio.prototype =
     return this.n / this.d
     }
 , reduce: function() {
-        var g = gcd(this.n, this.d)
-        if (g > 1) {
-            this.n /= g
-            this.d /= g
-        }
+        var g = Math.abs(gcd(this.n, this.d))
+        if (this.d < 0) g = -g
+        this.n /= g
+        this.d /= g
     }
 , reciprocal: function() {
         return Ratio(this.d, this.n)
+    }
+, neg: function() {
+        return Ratio(-this.n, this.d)
     }
 , times: function(x, d) {
         if (d) x = Ratio(x, d)

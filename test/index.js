@@ -162,5 +162,21 @@ describe("Ratio", function() {
                 ratio(2,3).div(4,3).toString().should.equal("1/2")
             })
         })
+
+        describe("Negatives", function() {
+
+            it("can be negative", function() {
+                ratio(-1,2).toString().should.equal("-1/2")
+            })
+            it("distributes negatives to the numerator", function() {
+                ratio(1,-2).toString().should.equal("-1/2")
+            })
+            it("cancels out negatives", function() {
+                ratio(-1,-2).toString().should.equal("1/2")
+            })
+            it("can be negated", function() {
+                ratio(1,2).neg().toString().should.equal("-1/2")
+            })
+        })
     })
 })
