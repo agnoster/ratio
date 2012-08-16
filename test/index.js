@@ -99,7 +99,7 @@ describe("Ratio", function() {
         })
     })
 
-    describe("Math", function() {
+    describe("Arithmetic", function() {
 
         describe("Reciprocal", function() {
 
@@ -208,6 +208,33 @@ describe("Ratio", function() {
 
             it("can add with different bases", function() {
                 ratio(2,3).plus(1,6).toString().should.equal("5/6")
+            })
+        })
+
+        describe("Subtraction", function() {
+
+            it("behaves reasonably with primitive subtraction", function() {
+                (ratio(1,2) - ratio(1,4)).should.equal(0.25)
+            })
+
+            it("can subtract ratios", function() {
+                ratio(4,7).minus(ratio(1,7)).toString().should.equal("3/7")
+            })
+
+            it("can subtract (n,d) pair representing a ratio", function() {
+                ratio(4,7).minus(1,7).toString().should.equal("3/7")
+            })
+
+            it("can subtract integers", function() {
+                ratio(7).minus(4).toString().should.equal("3")
+            })
+
+            it("can subtract decimals", function() {
+                ratio(4,5).minus(0.2).toString().should.equal("3/5")
+            })
+
+            it("can subtract with different bases", function() {
+                ratio(2,3).minus(1,6).toString().should.equal("1/2")
             })
         })
     })

@@ -77,6 +77,12 @@ Ratio.prototype =
 
         return Ratio(this.n * x.d + x.n * this.d, this.d * x.d)
     }
+, minus: function(x, d) {
+        if (d) x = Ratio(x, d)
+        else x = Ratio(x)
+
+        return this.plus(x.neg())
+    }
 }
 
 module.exports = Ratio
