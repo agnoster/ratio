@@ -35,9 +35,11 @@ describe("Ratio", function() {
         it("returns Infinity when n > 0 and d = 0", function() {
             ratio(1,0).should.equal(Infinity)
         })
+
         it("returns -Infinity when n < 0 and d = 0", function() {
             ratio(-1,0).should.equal(-Infinity)
         })
+
         it("returns NaN when n and d are both 0", function() {
             var r = ratio(0, 0)
             should.equal(typeof r, "number")
@@ -160,6 +162,17 @@ describe("Ratio", function() {
 
             it("automatically reduces the result of division", function() {
                 ratio(2,3).div(4,3).toString().should.equal("1/2")
+            })
+
+            it("division by zero returns correct Infinity", function() {
+                ratio(1).div(0).should.equal(Infinity)
+                ratio(-1).div(0).should.equal(-Infinity)
+            })
+
+            it("division of zero by zero returns NaN", function() {
+                var r = ratio(0).div(0)
+                should.equal(typeof r, "number")
+                should.not.equal(r, r)
             })
         })
 
