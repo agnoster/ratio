@@ -183,5 +183,32 @@ describe("Ratio", function() {
                 ratio(1,2).neg().toString().should.equal("-1/2")
             })
         })
+
+        describe("Addition", function() {
+
+            it("behaves reasonably with primitive addition", function() {
+                (ratio(1,2) + ratio(1,4)).should.equal(0.75)
+            })
+
+            it("can add ratios", function() {
+                ratio(1,7).plus(ratio(2,7)).toString().should.equal("3/7")
+            })
+
+            it("can add (n,d) pair representing a ratio", function() {
+                ratio(1,7).plus(2,7).toString().should.equal("3/7")
+            })
+
+            it("can add integers", function() {
+                ratio(1).plus(2).toString().should.equal("3")
+            })
+
+            it("can add decimals", function() {
+                ratio(1,4).plus(0.75).toString().should.equal("1")
+            })
+
+            it("can add with different bases", function() {
+                ratio(2,3).plus(1,6).toString().should.equal("5/6")
+            })
+        })
     })
 })
