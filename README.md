@@ -23,9 +23,14 @@ ratio(0.02).toSring() === '1/50'
   * `valueOf()` returns numeric form
   * `toString()` renders fractional form
 * automatically reduces fractions on creation
+* fraction arithmetic
+  * addition with `r.plus(x)`
+  * subtraction with `r.minus(x)`
+  * multiplication with `r.times(x)`
+  * division with `r.div(x)`
+  * reciprocal with `r.reciprocal()`
+  * negative with `r.neg()`
 
 ## still to come
 
-* arithmetic (r.plus/minus/times/div)
-* reciprocal
 * render unicode fractions?
