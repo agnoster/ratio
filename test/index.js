@@ -70,6 +70,11 @@ describe("Ratio", function() {
             ratio(1,2).should.equal(0.5)
         })
 
+        it("renders whole numbers", function() {
+            ratio(42).should.equal(42)
+            ratio(42).toString().should.equal("42")
+        })
+
         it("renders as a ratio in a string", function() {
             ratio(3,4).toString().should.equal("3/4")
         })

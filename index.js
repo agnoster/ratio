@@ -41,7 +41,7 @@ Ratio.prototype =
 , denominator: function() { return this.d }
 , toString: function() {
 
-    return (this.d === 1) ? this.n : (this.n + "/" + this.d)
+    return (this.d === 1) ? this.n.toString() : (this.n + "/" + this.d)
     }
 , valueOf: function() {
 
